@@ -6,7 +6,6 @@
 html{
     scroll-behavior: auto;
 }
-
 .display-1{
   font-family: 'Roboto Slab';
   text-shadow: 3px 3px solid rgba(0, 0, 0, 0.25);
@@ -573,11 +572,41 @@ h1.about{
     }
 
     /* Card */
-    #card{
+    #galeri{
       font-family: 'Roboto Slab';
 
     }
-
+    .card{
+      width: 18rem !important;
+      height: 400px;
+      position: relative;
+      margin-right: 10px;
+    }
+    .card-title{
+      opacity: 0;
+    }
+    .card-text{
+      opacity: 0;
+    }
+    .card a{
+      opacity: 0;
+    }
+    .card:hover .card-img{
+      filter: brightness(.5);
+      transition: 0.5s;
+    }
+    .card:hover .card-img-overlay a{
+      opacity: 1 !important;
+      transition: 1s;
+    }
+    .card:hover .card-title{
+      opacity: 1;
+      transition: .7s;
+    }
+    .card:hover .card-text{
+      opacity: 1 !important;
+      transition: 0.75s;
+    }
     /* Footer */
     #footer{
       font-family: 'Roboto Slab';
