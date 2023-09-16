@@ -27,16 +27,15 @@ $(document).on("scroll",function(){
 });
 
 $('.card-slide').slick({
-  centerMode: true,
   arrows: true,
-  centerPadding: '100px',
+  dots: true,
   slidesToShow: 3,
+  slidesToScroll: 3,
   responsive: [
     {
       breakpoint: 768,
       settings: {
         arrows: false,
-        centerMode: true,
         centerPadding: '40px',
         slidesToShow: 3
       }
@@ -45,7 +44,6 @@ $('.card-slide').slick({
       breakpoint: 480,
       settings: {
         arrows: false,
-        centerMode: true,
         centerPadding: '40px',
         slidesToShow: 1
       }
