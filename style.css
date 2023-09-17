@@ -185,7 +185,35 @@ h1.about{
   font-size: 0.5rem !important;
   transition: .5s;
 }
-
+#artikel{
+  font-family: 'Roboto Slab';
+}
+/* Artikel */
+.carousel-item{
+  height: 70vh !important;
+}
+.overlay{
+  position: absolute;
+}
+.carousel-item img{
+  filter: brightness(.4);
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+.spinner-border{
+  display: none !important;
+}
+#galeri{
+  font-family: 'Roboto Slab';
+}
+#galeri img{
+  filter: brightness(1);
+  transition: .7s;
+}
+#galeri img:hover{
+  filter: brightness(.7);
+  transform: scale(1.01);
+}
 /* Tablets */
 
 @media (min-width: 768px) { 
@@ -564,31 +592,6 @@ h1.about{
       background-color: #55423d;
       padding: 20px;
       box-shadow: 2px 0px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Artikel */
-    #artikel{
-      font-family: 'Roboto Slab';
-    }
-
-    /* Card */
-    #galeri{
-      font-family: 'Roboto Slab';
-
-    }
-    .card{
-      margin-right: 5px;
-    }
-    .card-img-top{
-      height: 300px !important;
-    }
-    /* Footer */
-    #footer{
-      font-family: 'Roboto Slab';
-      background-color: #170503;
-      color: white;
-      height: 35px;
-      padding: 1rem 1rem 2rem 1rem;
     }
 }
 
