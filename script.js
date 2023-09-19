@@ -16,6 +16,7 @@ $(document).on("scroll",function(){
     
     if ($(document).scrollTop() > 100){
       $(".contain").addClass("geser");
+      $(".home").removeClass("active");
     }else {
       $(".contain").removeClass("geser");
     }
@@ -26,68 +27,23 @@ $(document).on("scroll",function(){
     }
 });
 
-$('.card-slide').slick({
-  arrows: true,
-  dots: true,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        centerPadding: '40px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
+
+// Menggunakan document.querySelectorAll untuk memilih elemen-elemen
+let navbarlinks = document.querySelectorAll('#navbar .scrollto');
+
+const navbarlinksActive = () => {
+  let position = window.scrollY + 200;
+  navbarlinks.forEach(navbarlink => {
+    if (!navbarlink.hash) return;
+    let section = document.querySelector(navbarlink.hash);
+    if (!section) return;
+    if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+      navbarlink.classList.add('active');
+    } else {
+      navbarlink.classList.remove('active');
     }
-  ]
-});
+  });
+};
 
-
-$('.carousel-slide').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-
-$('.col-sm-4').tilt({
-  axis: x
-})
+window.addEventListener('load', navbarlinksActive);
+window.addEventListener('scroll', navbarlinksActive);

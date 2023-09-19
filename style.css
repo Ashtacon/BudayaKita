@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 ::-webkit-scrollbar {
   width: 0px; 
@@ -7,7 +8,7 @@ html{
     scroll-behavior: auto;
 }
 .display-1{
-  font-family: 'Roboto Slab';
+  font-family: 'Righteous', cursive;
   text-shadow: 3px 3px solid rgba(0, 0, 0, 0.25);
 }
 
@@ -28,7 +29,7 @@ body{
 }
 .contain{
     position: fixed;
-    font-family: 'Roboto Slab';
+    font-family: 'Righteous', cursive;
     font-size: 20px;
     left: 50%;
     top: 25%;
@@ -75,7 +76,7 @@ h1.about{
     background-color: #55423d;
     color: #fffffe;
     text-align: center;
-    font-family: 'Roboto Slab';
+    font-family: 'Righteous', cursive;
     font-size: .8rem !important;
     padding: 5px !important;
 }
@@ -173,46 +174,65 @@ h1.about{
   background-color: #55423d;
 }
 .nav-item > *{
-  font-family: 'Roboto Slab';
+  font-family: 'Righteous', cursive;
   color: #fffffe !important;
   font-size: .5rem !important;
 }
 
 .nav-item > *:hover{
   border-bottom: 2px solid salmon;
-  font-family: 'Roboto Slab';
+  font-family: 'Righteous', cursive;
   color: #e78fb3 !important;
   font-size: 0.5rem !important;
   transition: .5s;
 }
-#artikel{
-  font-family: 'Roboto Slab';
-}
-/* Artikel */
-.carousel-item{
-  height: 70vh !important;
-}
-.overlay{
-  position: absolute;
-}
-.carousel-item img{
-  filter: brightness(.4);
-  aspect-ratio: 16/9;
+.cards {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
-.spinner-border{
-  display: none !important;
+.card-item {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  max-width: 400px;
+  position: relative;
+  padding: 2rem;
+  box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #ccc;
+  background-color: #fff;
+  cursor: pointer;
 }
-#galeri{
-  font-family: 'Roboto Slab';
+.card-item:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform-origin: 0 bottom 0;
+  transform: scaleY(0);
+  transition: 0.4s ease-out;
 }
-#galeri img{
-  filter: brightness(1);
-  transition: .7s;
+.card-item:hover .card-title {
+  color: #fff;
 }
-#galeri img:hover{
-  filter: brightness(.7);
-  transform: scale(1.01);
+.card-item:hover:before {
+  transform: scaleY(1);
+}
+.card-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.333;
+  transition: 0.4s ease-out;
 }
 /* Tablets */
 
@@ -231,7 +251,7 @@ h1.about{
       display: none;
   }
     .display-1{
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       text-shadow: 3px 3px solid rgba(0, 0, 0, 0.25);
     }
     body{
@@ -241,7 +261,7 @@ h1.about{
     .contain{
         position: fixed;
         font-size: 70px !important;
-        font-family: 'Roboto Slab';
+        font-family: 'Righteous', cursive;
         left: 50%;
         top: 40%;
         line-height: 4rem !important;
@@ -287,7 +307,7 @@ h1.about{
         background-color: #55423d;
         color: #fffffe;
         text-align: center;
-        font-family: 'Roboto Slab';
+        font-family: 'Righteous', cursive;
         font-size: 1rem !important;
         padding: 5px !important;
     }
@@ -383,19 +403,19 @@ h1.about{
     /* Navbar */
     .navbar-brand{
       font-size: 2rem !important;
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #e78fb3 !important;
       text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
     }
     .nav-item > *{
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #fffffe !important;
       font-size: 1.2rem !important;
     }
 
     .nav-item > *:hover{
       border-bottom: 2px solid salmon;
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #e78fb3 !important;
       font-size: 1.2rem !important;
       transition: .5s;
@@ -407,7 +427,7 @@ h1.about{
 
 @media (min-width: 1024px){
     .display-1{
-        font-family: 'Roboto Slab';
+        font-family: 'Righteous', cursive;
         text-shadow: 3px 3px solid rgba(0, 0, 0, 0.25);
     }
     .introduction{
@@ -435,14 +455,14 @@ h1.about{
         z-index: 1;
     }
     body{
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Righteous', cursive;
         background-color: #795D55 !important;
         /* background-image: linear-gradient(50% #795D55, 50% #55423d); */
     }
     .contain{
         position: fixed;
         font-size: 90px !important;
-        font-family: 'Roboto Slab';
+        font-family: 'Righteous', cursive;
         left: 50%;
         top: 45%;
         line-height: 5rem !important;
@@ -471,9 +491,12 @@ h1.about{
     }
     /* About */
     #about{
+        min-height: 800px;
+        display: flex;
+        align-items: center;
         background-color: #55423d;
         color: #fffffe;
-        font-family: 'Roboto Slab';
+        font-family: 'Righteous', cursive;
         font-size: 1rem !important;
         position: relative;
     }
@@ -570,22 +593,22 @@ h1.about{
 
     /* Navbar */
     .nav-item > *{
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #fffffe !important;
-      font-size: 1.2rem !important;
+      font-size: 1rem !important;
     }
     .nav-link.active{
       border-bottom: 2px solid salmon;
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #e78fb3 !important;
-      font-size: 1.2rem !important;
+      font-size: 1rem !important;
       transition: .5s;
     }
     .nav-item > *:hover{
       border-bottom: 2px solid salmon;
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #e78fb3 !important;
-      font-size: 1.2rem !important;
+      font-size: 1rem !important;
       transition: .5s;
     }
     .nav.fixed-top{
@@ -593,6 +616,59 @@ h1.about{
       padding: 20px;
       box-shadow: 2px 0px rgba(0, 0, 0, 0.25);
     }
+    /* Artikel Budaya */
+
+    #artikel{
+      font-family: 'Righteous', cursive;
+      min-height: 1000px;
+    }
+    .cards {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      padding: 1rem;
+    }
+    .card-item {
+      display: flex;
+      text-decoration: none;
+      color: inherit;
+      max-width: 400px;
+      position: relative;
+      padding: 2rem;
+      box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #ccc;
+      background-color: #fff;
+      cursor: pointer;
+   }
+    .card-item:before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      transform-origin: 0 bottom 0;
+      transform: scaleY(0);
+      transition: 0.4s ease-out;
+   }
+    .card-item:hover .card-title {
+      color: #fff;
+   }
+    .card-item:hover:before {
+      transform: scaleY(1);
+   }
+    .card-title {
+      position: relative;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.333;
+      transition: 0.4s ease-out;
+   }
 }
 
 /* large Laptop */
@@ -611,7 +687,7 @@ h1.about{
    display: none !important;
   }
     .display-1{
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       text-shadow: 3px 3px solid rgba(0, 0, 0, 0.25);
     }
     body{
@@ -622,7 +698,7 @@ h1.about{
     }
     .contain{
         position: absolute;
-        font-family: 'Roboto Slab';
+        font-family: 'Righteous', cursive;
         left: 50%;
         top: 45%;
         font-size: 120px !important;
@@ -669,7 +745,7 @@ h1.about{
         background-color: #55423d;
         color: #fffffe;
         text-align: center;
-        font-family: 'Roboto Slab';
+        font-family: 'Righteous', cursive;
         font-size: 1.5rem !important;
     }
     .text{
@@ -764,14 +840,14 @@ h1.about{
 
     /* Navbar */
     .nav-item > *{
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #fffffe !important;
       font-size: 2rem !important;
     }
 
     .nav-item > *:hover{
       border-bottom: 2px solid salmon;
-      font-family: 'Roboto Slab';
+      font-family: 'Righteous', cursive;
       color: #e78fb3 !important;
       font-size: 2rem !important;
       transition: .5s;
