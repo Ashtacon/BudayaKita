@@ -47,3 +47,47 @@ const navbarlinksActive = () => {
 
 window.addEventListener('load', navbarlinksActive);
 window.addEventListener('scroll', navbarlinksActive);
+
+// Artikel
+const artikelContainer = document.getElementById('artikelContainer');
+const artikelData = [
+  { title: 'Kartu 1', description: 'Deskripsi Kartu 1', button: 'Baca Selengkapnya' },
+  { title: 'Kartu 2', description: 'Deskripsi Kartu 2', button: 'Baca Selengkapnya' },
+  { title: 'Kartu 3', description: 'Deskripsi Kartu 3', button: 'Baca Selengkapnya' },
+  { title: 'Kartu 4', description: 'Deskripsi Kartu 4', button: 'Baca Selengkapnya' }
+];
+
+artikelData.forEach(item => {
+  const col = document.createElement('div');
+  col.classList.add('col');
+
+  const artikel = document.createElement('div');
+  artikel.classList.add('artikel');
+
+  const artikelItem = document.createElement('div');
+  artikelItem.classList.add('artikel-item');
+  
+  const title = document.createElement('h2');
+  title.classList.add('artikel-title');
+  title.textContent = item.title;
+ 
+  const description = document.createElement('p');
+  description.classList.add('artikel-desc');
+  description.textContent = item.description;
+  
+  const button = document.createElement('a');
+  button.classList.add('artikel-btn', 'btn', 'btn-secondary');
+  button.textContent = item.button;
+
+  
+  // Gabungkan artikelItem
+  artikelItem.appendChild(title);
+  artikelItem.appendChild(description);
+  artikelItem.appendChild(button);
+  // masukkan artikel item ke artikel
+  artikel.appendChild(artikelItem);
+  // masukkan artikel ke col
+  col.appendChild(artikel);
+  // masukkan col ke artikelcontainer
+  artikelContainer.appendChild(col);
+});

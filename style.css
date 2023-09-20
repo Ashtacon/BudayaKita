@@ -186,7 +186,8 @@ h1.about{
   font-size: 0.5rem !important;
   transition: .5s;
 }
-.cards {
+
+.artikel {
   position: relative;
   top: 0;
   left: 0;
@@ -195,21 +196,25 @@ h1.about{
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: .5rem;
 }
-.card-item {
+.artikel-item {
   display: flex;
-  text-decoration: none;
-  color: inherit;
-  max-width: 400px;
+  color: transparent;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
   position: relative;
   padding: 2rem;
-  box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #ccc;
+  border-radius: 10px;
   background-color: #fff;
   cursor: pointer;
+  background-size: cover;
+  background-image: url("https://source.unsplash.com/random");
 }
-.card-item:before {
+.artikel-item::before {
   position: absolute;
+  border-radius: 10px;
   left: 0;
   bottom: 0;
   content: "";
@@ -217,22 +222,42 @@ h1.about{
   width: 100%;
   height: 100%;
   background-color: #000;
+  opacity: .7;
+  text-shadow: 2px 2px 2px 2px black;
   transform-origin: 0 bottom 0;
   transform: scaleY(0);
   transition: 0.4s ease-out;
 }
-.card-item:hover .card-title {
+.artikel-item:hover .artikel-title {
   color: #fff;
 }
-.card-item:hover:before {
+.artikel-item:hover:before {
   transform: scaleY(1);
 }
-.card-title {
+.artikel-title {
   position: relative;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.333;
   transition: 0.4s ease-out;
+}
+.artikel-btn{
+  position: relative;
+  opacity: 0;
+  transition: 1s;
+}
+.artikel-desc{
+  position: relative;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.333;
+  transition: 0.4s ease-out;
+}
+.artikel-item:hover .artikel-desc {
+  color: #fff;
+}
+.artikel-item:hover .artikel-btn {
+  opacity: 1;
 }
 /* Tablets */
 
@@ -622,53 +647,6 @@ h1.about{
       font-family: 'Righteous', cursive;
       min-height: 1000px;
     }
-    .cards {
-      position: relative;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      padding: 1rem;
-    }
-    .card-item {
-      display: flex;
-      text-decoration: none;
-      color: inherit;
-      max-width: 400px;
-      position: relative;
-      padding: 2rem;
-      box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #ccc;
-      background-color: #fff;
-      cursor: pointer;
-   }
-    .card-item:before {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      transform-origin: 0 bottom 0;
-      transform: scaleY(0);
-      transition: 0.4s ease-out;
-   }
-    .card-item:hover .card-title {
-      color: #fff;
-   }
-    .card-item:hover:before {
-      transform: scaleY(1);
-   }
-    .card-title {
-      position: relative;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.333;
-      transition: 0.4s ease-out;
-   }
 }
 
 /* large Laptop */
@@ -853,95 +831,3 @@ h1.about{
       transition: .5s;
     }
 }
-
-/*footer*/
-.footer-dark {
-  padding:50px 0;
-  color:#f0f9ff;
-  background-color:#503027;
-}
-
-.footer-dark h3 {
-  margin-top:0;
-  margin-bottom:12px;
-  font-weight:bold;
-  font-size:16px;
-}
-
-.footer-dark ul {
-  padding:0;
-  list-style:none;
-  line-height:1.6;
-  font-size:14px;
-  margin-bottom:0;
-}
-
-.footer-dark ul a {
-  color:inherit;
-  text-decoration:none;
-  opacity:0.6;
-}
-
-.footer-dark ul a:hover {
-  opacity:0.8;
-}
-
-@media (max-width:767px) {
-  .footer-dark .item:not(.social) {
-    text-align:center;
-    padding-bottom:20px;
-  }
-}
-
-.footer-dark .item.text {
-  margin-bottom:36px;
-}
-
-@media (max-width:767px) {
-  .footer-dark .item.text {
-    margin-bottom:0;
-  }
-}
-
-.footer-dark .item.text p {
-  opacity:0.6;
-  margin-bottom:0;
-}
-
-.footer-dark .item.social {
-  text-align:center;
-}
-
-@media (max-width:991px) {
-  .footer-dark .item.social {
-    text-align:center;
-    margin-top:20px;
-  }
-}
-
-.footer-dark .item.social > a {
-  font-size:20px;
-  width:36px;
-  height:36px;
-  line-height:36px;
-  display:inline-block;
-  text-align:center;
-  border-radius:50%;
-  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
-  margin:0 8px;
-  color:#fff;
-  opacity:0.75;
-}
-
-.footer-dark .item.social > a:hover {
-  opacity:0.9;
-}
-
-.footer-dark .copyright {
-  text-align:center;
-  padding-top:24px;
-  opacity:0.3;
-  font-size:13px;
-  margin-bottom:0;
-}
-
